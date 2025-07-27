@@ -171,8 +171,8 @@ export class MonksTokenBar {
             return (MonksTokenBar.allowMovement(this.document, false) ? result : false);
         });
 
-        patchFunc("ChatLog.prototype._getEntryContextOptions", function (wrapped, ...args) {
-            let menu = wrapped.call(...args);
+        patchFunc("ChatLog.prototype._getEntryContextOptions", function (wrapped, ...args) {␊
+            let menu = wrapped(...args);
 
             let canHeroPointReroll = ($li) => {
                 const message = game.messages.get($li.getAttribute('data-message-id'), { strict: !0 });
