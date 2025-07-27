@@ -171,8 +171,12 @@ export class MonksTokenBar {
             return (MonksTokenBar.allowMovement(this.document, false) ? result : false);
         });
 
+// codex/fix-compatibility-between-monks-tokenbar-and-extempore-effec
         patchFunc("ChatLog.prototype._getEntryContextOptions", function (wrapped, ...args) {
             let menu = wrapped(...args);
+        patchFunc("ChatLog.prototype._getEntryContextOptions", function (wrapped, ...args) {␊
+            let menu = wrapped(...args);
+// main
 
             let canHeroPointReroll = ($li) => {
                 const messageId = $li[0]?.dataset?.messageId;
